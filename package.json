@@ -1,0 +1,16 @@
+{
+  "name": "zn-todomvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "chokidar-cmd -c \"npm run build\" -t src --initial",
+    "tests": "echo \"Error: no test specified\"",
+    "build": "elm-make src/ZnTodoMVC.elm --output zntodomvc.js --yes",
+    "clean": "del *.js npm-debug.*",
+    "cleandep": "rmdir /s /q elm-stuff",
+    "open": "start \"\" .\\index.html"
+  },
+  "author": "zakaluka",
+  "license": "ISC"
+}

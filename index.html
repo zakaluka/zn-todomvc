@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ZnTodoMVC</title>
+    <script type="text/javascript" src="zntodomvc.js"></script>
+    <link rel="stylesheet" href="surface_styles.css">
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+    var storedState = localStorage.getItem('elm-todo-save');
+    var startingState = storedState ? JSON.parse(storedState) : null;
+    var todomvc = Elm.ZnTodoMVC.fullscreen(startingState);
+    todomvc.ports.setStorage.subscribe(function(state) {
+        localStorage.setItem('elm-todo-save', JSON.stringify(state));
+    });
+</script>
+
+</html>
